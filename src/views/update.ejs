@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="/">Home</a>
+      <a href="/create">Create</a>
+    </div>
+    <%= JSON.stringify(user) %>
+    <div class="form">
+      <form action="/update-user" method="post">
+        <div class="input-group hidden">
+          <label>Username:</label>
+          <input type="text" name="userId" value="<%= user.id %>" />
+        </div>
+        <div class="input-group">
+          <label>Username:</label>
+          <input type="text" name="username" value="<%= user.username %>" />
+        </div>
+        <div class="input-group">
+          <label>Email:</label>
+          <input type="text" name="email" value="<%= user.email %>" />
+        </div>
+        <div class="input-group">
+          <label>Full Name:</label>
+          <input type="text" name="full_name" value="<%= user.full_name %>" />
+        </div>
+        <div class="input-group">
+          <button type="submit">Update</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

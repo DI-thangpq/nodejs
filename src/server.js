@@ -11,12 +11,14 @@ const hostname = process.env.HOST_NAME;
 
 configViewEngine(app);
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use("/", webRoutes);
 
-connection.query("SELECT * from Users", function (error, results) {
-  if (error) throw error;
-  console.log("results", results);
-});
+// connection.query("SELECT * from Users", function (error, results) {
+//   if (error) throw error;
+//   console.log("results", results);
+// });
 
 app.listen(port, () => {
   console.log(`Connection port ${port}`);

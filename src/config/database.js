@@ -1,5 +1,5 @@
 require("dotenv").config();
-var mysql = require("mysql2");
+var mysql = require("mysql2/promise");
 
 var connection = mysql.createPool({
   host: process.env.DB_HOST,
